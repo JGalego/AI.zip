@@ -107,6 +107,7 @@ The classifier automatically downloads the AG News dataset and performs text cla
 * (Ken Schutte, 2023b) ["Gzip beats BERT?" Part 2: dataset issues, improved speed, and results](https://kenschutte.com/gzip-knn-paper2/)
 * (LSE, 2023) [Compression and complexity: Making sense of Artificial Intelligence](https://blogs.lse.ac.uk/europpblog/2023/06/30/compression-and-complexity-making-sense-of-artificial-intelligence/)
 * (MaximumCompression, 2025) [AI and File Compression: How Artificial Intelligence Is Shaping the Future of Data Reduction](https://www.maximumcompression.com/ai-and-file-compression-how-artificial-intelligence-is-shaping-the-future-of-data-reduction/)
+* (o565, 2024) [DRINK ME: (Ab)Using a LLM to compress text](https://o565.com/llm-text-compression/)
 * (TechXplore, 2025) [Algorithm based on LLMs doubles lossless data compression rates](https://techxplore.com/news/2025-05-algorithm-based-llms-lossless-compression.html)
 * (The New Yorker, 2023) [ChatGPT is a blurry JPEG of the Web](https://www.newyorker.com/tech/annals-of-technology/chatgpt-is-a-blurry-jpeg-of-the-web)
 
@@ -114,8 +115,9 @@ The classifier automatically downloads the AG News dataset and performs text cla
 
 **Implementation Repositories**
 
-- [`npc_gzip`](https://github.com/bazingagin/npc_gzip) - original code for Jiang et al. (2023)
-- [`simple-KNN-gzip`](https://github.com/Sentdex/Simple-kNN-Gzip) - simplified implementation
+- [`bazingagin/npc_gzip`](https://github.com/bazingagin/npc_gzip) - original code for Jiang et al. (2023)
+- [`kts/gzip-knn`](https://github.com/kts/gzip-knn) - a "fair" reimplementation of the original
+- [`Sentdex/Simple-kNN-Gzip`](https://github.com/Sentdex/Simple-kNN-Gzip) - a simplified version
 
 **Fabrice Bellard's Experiments**
 
