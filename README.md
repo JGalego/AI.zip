@@ -2,9 +2,65 @@
 
 ## Overview 🔎
 
-Some notes on AI as compression.
+This repository investigates the fascinating relationship between AI and compression through both theoretical exploration and practical implementation.
 
-## References 🔎
+The core insight is that **compression and intelligence are deeply connected** - to compress data effectively, you need to understand its patterns and structure.
+
+## The Big Idea
+
+The relationship between compression and intelligence isn't just theoretical. As articulated in the famous Hutter Prize challenge: *"Understanding is compression."* 
+
+Large language models achieve remarkable compression ratios precisely because they capture deep patterns in human language and knowledge.
+
+> *"**Think of ChatGPT as a blurry JPEG of all the text on the Web.** It retains much of the information on the Web, in the same way that a JPEG retains much of the information of a higher-resolution image, but, if you’re looking for an exact sequence of bits, you won’t find it; all you will ever get is an approximation. But, because the approximation is presented in the form of grammatical text, which ChatGPT excels at creating, it’s usually acceptable."* - Ted Chiang
+
+<img src="ai2zip.png" title="Adapted from Andrej Karpathy"/>
+
+## Implementation: Gzip Text Classifier 🧪
+
+The `gzip_classifier.py` demonstrates how simple compression algorithms can be surprisingly effective for text classification tasks. Based on the methodology from Jiang et al. (2023), this implementation uses:
+
+- **Normalized Compression Distance (NCD)** to measure text similarity
+- **k-Nearest Neighbors (k-NN)** for classification
+- **Parallel processing** for performance optimization
+- **Adaptive strategies** that scale from small to large datasets
+
+### Quick Start
+
+```bash
+uv run gzip_classifier.py
+```
+
+The classifier automatically downloads the AG News dataset and performs text classification via k-nearest neighbors (k-NN) using only gzip compression - no neural networks required!
+
+## Key Insights & Research Themes 💡
+
+### Core Concepts
+
+- **Intelligence as Compression**: the idea that understanding data requires finding efficient representations
+- **Language Models as Compressors**: modern LLMs achieve impressive compression by learning linguistic patterns  
+- **Information Theory Foundations**: connecting Kolmogorov complexity, minimum description length (MDL), and machine learning
+- **Practical Applications**: how compression techniques can improve ML algorithms and vice versa
+
+### Research Highlights
+
+**🏆 Breakthrough Papers**
+- *Language Modeling is Compression* (Delétang et al., 2023) - Shows LLMs can outperform traditional compressors
+- *"Low-Resource" Text Classification* (Jiang et al., 2023) - The controversial "gzip beats BERT" paper
+- *Lossless data compression by large models* (Li et al., 2025) - Latest advances in neural compression
+
+**🔥 Hot Topics** 
+- Neural data compression techniques
+- Compression-based few-shot learning
+- Information-theoretic analysis of deep learning
+- Scaling laws through compression lens
+
+**⚠️ Important Debates**
+- Accuracy issues in the original "gzip beats BERT" findings ([Ken Schutte's analysis](https://kenschutte.com/gzip-knn-paper/))
+- Train-test leakage problems in compression-based classification
+- Limitations of compression as a general intelligence metric
+
+## References 📖
 
 ### Articles 📑
 
@@ -34,9 +90,9 @@ Some notes on AI as compression.
 
 ### Books 📚
 
-* (MacKay, 2003) [Information Theory, Inference and Learning Algorithms](https://www.cambridge.org/gb/universitypress/subjects/computer-science/pattern-recognition-and-machine-learning/information-theory-inference-and-learning-algorithms)
-* (Mohri, Rostamizadeh & Talwalkar, 2018) [Foundations of Machine Learning](https://mitpress.mit.edu/9780262039406/foundations-of-machine-learning/)
-* (Shannon & Weaver, 1949) [Mathematical Theory of Communication](https://web.archive.org/web/20000823215030/http://cm.bell-labs.com/cm/ms/what/shannonday/shannon1948.pdf)
+- (MacKay, 2003) [Information Theory, Inference and Learning Algorithms](https://www.cambridge.org/gb/universitypress/subjects/computer-science/pattern-recognition-and-machine-learning/information-theory-inference-and-learning-algorithms)
+- (Shannon & Weaver, 1949) [Mathematical Theory of Communication](https://web.archive.org/web/20000823215030/http://cm.bell-labs.com/cm/ms/what/shannonday/shannon1948.pdf)
+- (Mohri, Rostamizadeh & Talwalkar, 2018) [Foundations of Machine Learning](https://mitpress.mit.edu/9780262039406/foundations-of-machine-learning/)
 
 ### Blogs/News ✍️
 
@@ -54,33 +110,61 @@ Some notes on AI as compression.
 * (TechXplore, 2025) [Algorithm based on LLMs doubles lossless data compression rates](https://techxplore.com/news/2025-05-algorithm-based-llms-lossless-compression.html)
 * (The New Yorker, 2023) [ChatGPT is a blurry JPEG of the Web](https://www.newyorker.com/tech/annals-of-technology/chatgpt-is-a-blurry-jpeg-of-the-web)
 
-### Code 💻
+### Code & Tools 💻
 
-* [`simple-KNN-gzip`](https://github.com/Sentdex/Simple-kNN-Gzip) - 
-* [`npc_gzip`](https://github.com/bazingagin/npc_gzip) - code for Jiang *et al.* (2023)
-* Ballard's stuff
-  - [`nccp`](https://bellard.org/nncp/) - an experiment to build a practical lossless data compressor with neural networks
-  - [`ts_zip`](https://bellard.org/ts_zip/) - utility that can compress and hopefully decompress text files using an LLM (current version uses [RWKV](https://www.rwkv.com/))
-  - [`ts_sms`](https://bellard.org/ts_sms/) - short message compression using an LLM
+**Implementation Repositories**
 
-### Videos/Podcasts 🎞️
+- [`npc_gzip`](https://github.com/bazingagin/npc_gzip) - original code for Jiang et al. (2023)
+- [`simple-KNN-gzip`](https://github.com/Sentdex/Simple-kNN-Gzip) - simplified implementation
 
-* (Andrej Karpathy, 2023) [Intro to Large Language Models](https://www.youtube.com/watch?v=zjkBMFhNj_g)
-* (Lex Fridman, 2021) [Hutter Prize: Intelligence as Compression](https://www.youtube.com/watch?v=boiW5qhrGH4) with George Hotz
-* (sentdex, 2023) [Gzip is all You Need!](https://www.youtube.com/watch?v=jkdWzvMOPuo)
-* (StackOverflow, 2024) [Compression is understanding](https://stackoverflow.blog/2024/01/26/compression-is-understanding/)
-* (Stanford MLSys, 2023) [Compression for AGI](https://www.youtube.com/watch?v=dO4TPJkeaaU) by Jack Rae
+**Fabrice Bellard's Experiments**
 
-### Miscellaneous 👾
+- [`nncp`](https://bellard.org/nncp/) - neural network-based practical lossless compressor
+- [`ts_zip`](https://bellard.org/ts_zip/) - text compression using LLMs (RWKV)
+- [`ts_sms`](https://bellard.org/ts_sms/) - short message compression with LLMs
 
-* [Data Compression Explained](https://mattmahoney.net/dc/dce.html) by Matt Mahoney
-* [Prize for Compressing Human Knowledge](http://prize.hutter1.net/index.htm) AKA Hutter Prize
-  - Task // Compress the `1GB` file `enwik9` to less than the current record of about `110MB`
-  - FAQ // [What is (artificial) intelligence?](http://prize.hutter1.net/hfaq.htm#ai), [What does compression have to do with (artificial) intelligence?](http://prize.hutter1.net/hfaq.htm#compai), and [Why is "understanding" of the text or "intelligence" needed to achieve maximal compression?](http://prize.hutter1.net/hfaq.htm#understand)
-* [Arithmetic Coding](https://en.wikipedia.org/wiki/Arithmetic_coding) on Wikipedia
-* [Data Compression](https://serp.ai/posts/data-compression/) by Serp.ai
-* Live from Redditverse
-   - [AI is just compression?](https://www.reddit.com/r/AskComputerScience/comments/um18by/ai_is_just_compression/) at r/AskComputerScience
-* Random fun stuff
-    - [Data Quality](https://www.explainxkcd.com/wiki/index.php/2739:_Data_Quality) by xkcd
-    - [Xerox scanners/photocopiers randomly alter numbers in scanned documents](https://www.dkriesel.com/en/blog/2013/0802_xerox-workcentres_are_switching_written_numbers_when_scanning) by David Kriesel
+### Learn More 🚀
+
+**Must-Watch Videos**
+
+- [Intro to Large Language Models](https://www.youtube.com/watch?v=zjkBMFhNj_g) - Andrej Karpathy's excellent overview
+- [Compression for AGI](https://www.youtube.com/watch?v=dO4TPJkeaaU) - Jack Rae at Stanford MLSys
+- [Gzip is all You Need!](https://www.youtube.com/watch?v=jkdWzvMOPuo) - sentdex's practical take
+
+**Thought-Provoking Reads**
+
+- [ChatGPT is a blurry JPEG of the Web](https://www.newyorker.com/tech/annals-of-technology/chatgpt-is-a-blurry-jpeg-of-the-web) - Ted Chiang's influential essay
+- [Compression is understanding](https://stackoverflow.blog/2024/01/26/compression-is-understanding/) - StackOverflow's perspective
+- [Why gzip just beat a Large Language Model](https://www.hendrik-erz.de/post/why-gzip-just-beat-a-large-language-model) - Critical analysis
+
+**Deep Dives & Challenges**
+
+- [Hutter Prize](http://prize.hutter1.net/index.htm) - The famous compression challenge for AGI
+- [Data Compression Explained](https://mattmahoney.net/dc/dce.html) - Matt Mahoney's comprehensive guide
+- [AI is just compression?](https://www.reddit.com/r/AskComputerScience/comments/um18by/ai_is_just_compression/) - Reddit discussion
+
+---
+
+## Fun Extras 🎨
+
+**Philosophical Musings**
+
+- [Data Quality](https://www.explainxkcd.com/wiki/index.php/2739:_Data_Quality) - xkcd's take on data compression
+- [Xerox scanners randomly alter numbers](https://www.dkriesel.com/en/blog/2013/0802_xerox-workcentres_are_switching_written_numbers_when_scanning) - When compression goes wrong
+
+**The Ultimate Challenge**
+
+🏆 [Hutter Prize](http://prize.hutter1.net/index.htm): Compress Wikipedia (1GB) to less than 110MB and prove your AI is intelligent!
+
+## Contributing 🤝
+
+Found an interesting paper, blog post, or implementation? Have ideas for improving the gzip classifier? Contributions are welcome!
+
+- 📄 **Papers**: add to the appropriate section with proper citation format
+- 🔧 **Code improvements**: optimize the code and/or add new features  
+- 🐛 **Bug reports**: help improve the implementation
+- 💭 **Ideas**: share thoughts on the connection between compression and intelligence
+
+## License 📜
+
+This collection is shared for educational and research purposes. Please respect the licenses of individual papers and code repositories referenced here.
