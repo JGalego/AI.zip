@@ -18,7 +18,9 @@ Large language models achieve remarkable compression ratios precisely because th
 
 ## Implementation: Gzip Text Classifier 🧪
 
-The `gzip_classifier.py` demonstrates how simple compression algorithms can be surprisingly effective for text classification tasks. Based on the methodology from Jiang *et al.* (2023), this implementation uses:
+The `gzip_classifier.py` demonstrates how simple compression algorithms can be surprisingly effective for text classification tasks.
+
+Based on the methodology from Jiang *et al.* (2023), this implementation uses:
 
 - **Normalized Compression Distance (NCD)** to measure text similarity
 - **k-Nearest Neighbors (k-NN)** for classification
@@ -108,6 +110,7 @@ The classifier automatically downloads the AG News dataset and performs text cla
 - (MacKay, 2003) [Information Theory, Inference and Learning Algorithms](https://www.cambridge.org/gb/universitypress/subjects/computer-science/pattern-recognition-and-machine-learning/information-theory-inference-and-learning-algorithms)
 - (Shannon & Weaver, 1949) [Mathematical Theory of Communication](https://web.archive.org/web/20000823215030/http://cm.bell-labs.com/cm/ms/what/shannonday/shannon1948.pdf)
 - (Mohri, Rostamizadeh & Talwalkar, 2018) [Foundations of Machine Learning](https://mitpress.mit.edu/9780262039406/foundations-of-machine-learning/)
+- (Nelson & Gailly, 1995) [The Data Compression Book](https://www.amazon.com/Data-Compression-Book-Mark-Nelson/dp/1558514341)
 
 ### Blogs/News ✍️
 
@@ -137,6 +140,7 @@ The classifier automatically downloads the AG News dataset and performs text cla
   - [`Sentdex/Simple-kNN-Gzip`](https://github.com/Sentdex/Simple-kNN-Gzip) - a simplified version
 - [`google-deepmind/language_modeling_is_compression`](https://github.com/google-deepmind/language_modeling_is_compression) - original code from Delétang *et al.* (2023)
 - [`hkust-nlp/llm-compression-intelligence`](https://github.com/hkust-nlp/llm-compression-intelligence) - original code from Huang *et al.* (2024)
+- [`nayuki/Reference-arithmetic-coding`](https://github.com/nayuki/Reference-arithmetic-coding) - clear implementation of arithmetic coding for educational purposes in Java, Python, C++
 
 **Fabrice Bellard's Experiments**
 
@@ -152,25 +156,26 @@ The classifier automatically downloads the AG News dataset and performs text cla
 
 **Must-Watch Videos**
 
-- [An Observation on Generalization](https://www.youtube.com/live/AKMuA_TVz3A) by Ilya Sutskever
+- [An Observation on Generalization](https://www.youtube.com/live/AKMuA_TVz3A) by Ilya Sutskever (because OpenAI wouldn't let him talk about something else)
 - [Intro to Large Language Models](https://www.youtube.com/watch?v=zjkBMFhNj_g) by Andrej Karpathy
 - [Compression for AGI](https://www.youtube.com/watch?v=dO4TPJkeaaU) by Jack Rae at Stanford MLSys
 - [Prediction as Compression](https://www.youtube.com/watch?v=wSQo2xUiSf0) by Jeffrey Vitter
-- [Gzip is all You Need!](https://www.youtube.com/watch?v=jkdWzvMOPuo) by sentdex
 
 **Thought-Provoking Reads**
 
-- [ChatGPT is a blurry JPEG of the Web](https://www.newyorker.com/tech/annals-of-technology/chatgpt-is-a-blurry-jpeg-of-the-web) - Ted Chiang's influential essay
-- [Compression is understanding](https://stackoverflow.blog/2024/01/26/compression-is-understanding/) - StackOverflow's perspective
-- [Why gzip just beat a Large Language Model](https://www.hendrik-erz.de/post/why-gzip-just-beat-a-large-language-model) - Critical analysis
+- Ted Chiang's [ChatGPT is a blurry JPEG of the Web](https://www.newyorker.com/tech/annals-of-technology/chatgpt-is-a-blurry-jpeg-of-the-web) essay
+- StackOverflow on the whole [Compression is understanding](https://stackoverflow.blog/2024/01/26/compression-is-understanding/) paradigm
+- Hendrik Erz's critical analysis on [Why gzip just beat a Large Language Model](https://www.hendrik-erz.de/post/why-gzip-just-beat-a-large-language-model)
 
 **Deep Dives & Challenges**
 
-- [Hutter Prize](http://prize.hutter1.net/index.htm) - The famous compression challenge for AGI
-- [Data Compression Explained](https://mattmahoney.net/dc/dce.html) - Matt Mahoney's comprehensive guide
-- [Data Compression](https://www.data-compression.info/) - The Data Compression resource on the Internet
-- [Data Compression with Arithmetic Encoding](https://web.archive.org/web/20240818223502/https://marknelson.us/posts/2014/10/19/data-compression-with-arithmetic-coding.html) - an "annoyingly long" version of a 1991 article by Mark Nelson
-- [AI is just compression?](https://www.reddit.com/r/AskComputerScience/comments/um18by/ai_is_just_compression/) - Reddit discussion
+- [Prize for Compressing Human Knowledge](http://prize.hutter1.net/index.htm) AKA Hutter Prize - the famous compression challenge for AGI
+- Matt Mahoney's [Data Compression Explained](https://mattmahoney.net/dc/dce.html) guide
+- The [Data Compression](https://www.data-compression.info/) resource on the Internet
+- Mark Nelson's [Data Compression with Arithmetic Encoding](https://web.archive.org/web/20240818223502/https://marknelson.us/posts/2014/10/19/data-compression-with-arithmetic-coding.html), an "annoyingly long" version of a 1991 original
+- Mark Nelson's [Arithmetic Coding + Statistical Modeling = Data Compression](https://web.archive.org/web/20240724234620/https://marknelson.us/posts/1991/02/01/arithmetic-coding-statistical-modeling-data-compression.html), the original article
+- Michael Dipperstein's [Arithmetic Code Discussion and Implementation](https://michaeldipperstein.github.io/arithmetic.html)
+- [Reference Arithmetic Coding](https://www.nayuki.io/page/reference-arithmetic-coding), a reference implementation suitable for educational purposes
 
 ---
 
@@ -179,11 +184,12 @@ The classifier automatically downloads the AG News dataset and performs text cla
 **Philosophical Musings**
 
 - [Data Quality](https://www.explainxkcd.com/wiki/index.php/2739:_Data_Quality) - xkcd's take on data compression
-- [Xerox scanners randomly alter numbers](https://www.dkriesel.com/en/blog/2013/0802_xerox-workcentres_are_switching_written_numbers_when_scanning) - When compression goes wrong
+- [Xerox scanners randomly alter numbers](https://www.dkriesel.com/en/blog/2013/0802_xerox-workcentres_are_switching_written_numbers_when_scanning) - when compression goes wrong
+- Any reddit discussion that mentions `AI`, `prediction` and `compression`
 
 **The Ultimate Challenge**
 
-🏆 [Hutter Prize](http://prize.hutter1.net/index.htm): Compress Wikipedia (1GB) to less than 110MB and prove your AI is intelligent!
+🏆 [Hutter Prize](http://prize.hutter1.net/index.htm): compress Wikipedia (`1GB`) to less than `110MB` and prove your AI is intelligent!
 
 ## Contributing 🤝
 
