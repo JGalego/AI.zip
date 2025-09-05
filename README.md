@@ -18,7 +18,7 @@ Large language models achieve remarkable compression ratios precisely because th
 
 ## Implementation: Gzip Text Classifier 🧪
 
-The `gzip_classifier.py` demonstrates how simple compression algorithms can be surprisingly effective for text classification tasks. Based on the methodology from Jiang et al. (2023), this implementation uses:
+The `gzip_classifier.py` demonstrates how simple compression algorithms can be surprisingly effective for text classification tasks. Based on the methodology from Jiang *et al.* (2023), this implementation uses:
 
 - **Normalized Compression Distance (NCD)** to measure text similarity
 - **k-Nearest Neighbors (k-NN)** for classification
@@ -45,9 +45,9 @@ The classifier automatically downloads the AG News dataset and performs text cla
 ### Research Highlights
 
 **🏆 Breakthrough Papers**
-- *Language Modeling is Compression* (Delétang et al., 2023) - Shows LLMs can outperform traditional compressors
-- *"Low-Resource" Text Classification* (Jiang et al., 2023) - The controversial "gzip beats BERT" paper
-- *Lossless data compression by large models* (Li et al., 2025) - Latest advances in neural compression
+- *Language Modeling is Compression* (Delétang *et al.*, 2023) - Shows LLMs can outperform traditional compressors
+- *"Low-Resource" Text Classification* (Jiang *et al.*, 2023) - The controversial "gzip beats BERT" paper
+- *Lossless data compression by large models* (Li *et al.*, 2025) - Latest advances in neural compression
 
 **🔥 Hot Topics** 
 - Neural data compression techniques
@@ -64,61 +64,79 @@ The classifier automatically downloads the AG News dataset and performs text cla
 
 ### Articles 📑
 
-* (Bennet *et al.*, 1998) [Information Distance](https://cs.uwaterloo.ca/~mli/informationdistance.pdf)
-* (Buttrick, 2024) [Studying large language models as compression algorithms for human culture](https://www.cell.com/trends/cognitive-sciences/abstract/S1364-6613(24)00001-9)
-* (Chen *et al.*, 2024) [Information Compression in the AI Era: Recent Advances and Future Challenges](https://arxiv.org/abs/2406.10036)
-* (Delétang *et al.*, 2023) [Language Modeling is Compression](https://arxiv.org/pdf/2309.10668)
-* (Frank, Chui & Witten, 2000) [Text categorization using compression models](https://ieeexplore.ieee.org/document/838202/)
-* (Goldblum *et al.*, 2023) [The No Free Lunch Theorem, Kolmogorov Complexity, and the Role of Inductive Biases in Machine Learning](https://arxiv.org/abs/2304.05366)
-* (Hinton & Camp, 1993) [Keeping the neural networks simple by minimizing the description length of the weights](https://dl.acm.org/doi/10.1145/168304.168306)
-* (Huang *et al.*, 2024) [Compression Represents Intelligence Linearly](https://arxiv.org/abs/2404.09937)
-* (Jiang *et al.*, 2023) ["Low-Resource" Text Classification: A Parameter-Free Classification Method with Compressors](https://aclanthology.org/2023.findings-acl.426)
+- (Bennet *et al.*, 1998) [Information Distance](https://cs.uwaterloo.ca/~mli/informationdistance.pdf)
+- (Buttrick, 2024) [Studying large language models as compression algorithms for human culture](https://www.cell.com/trends/cognitive-sciences/abstract/S1364-6613(24)00001-9)
+- (Chen *et al.*, 2024a) [Information Compression in the AI Era: Recent Advances and Future Challenges](https://arxiv.org/abs/2406.10036)
+- (Chen *et al.*, 2024b) [Large Language Models for Lossless Image Compression: Next-Pixel Prediction in Language Space is All You Need](https://arxiv.org/abs/2411.12448)
+- (David, Moran & Yehudayoff, 2016) [On statistical learning via the lens of compression](https://arxiv.org/abs/1610.03592)
+- (Delétang *et al.*, 2023) [Language Modeling is Compression](https://arxiv.org/pdf/2309.10668)
+- (Dubois *et al.*, 2021) [Lossy Compression for Lossless Prediction](https://arxiv.org/abs/2106.10800)
+- (Frank, Chui & Witten, 2000) [Text categorization using compression models](https://ieeexplore.ieee.org/document/838202/)
+- (Goldblum *et al.*, 2023) [The No Free Lunch Theorem, Kolmogorov Complexity, and the Role of Inductive Biases in Machine Learning](https://arxiv.org/abs/2304.05366)
+- (Guo *et al.*, 2024) [Ranking LLMs by compression](https://arxiv.org/abs/2406.14171)
+- (Grünwald, 2004) [A tutorial introduction to the minimum description length principle](https://arxiv.org/abs/math/0406077)
+- (Heurtel-Depeiges *et al.*, 2024) [Compression via Pre-trained Transformers: A Study on Byte-Level Multimodal Data](https://arxiv.org/abs/2410.05078)
+- (Hinton & Camp, 1993) [Keeping the neural networks simple by minimizing the description length of the weights](https://dl.acm.org/doi/10.1145/168304.168306)
+- (Huang *et al.*, 2024) [Compression Represents Intelligence Linearly](https://arxiv.org/abs/2404.09937)
+- (Jiang *et al.*, 2023) ["Low-Resource" Text Classification: A Parameter-Free Classification Method with Compressors](https://aclanthology.org/2023.findings-acl.426)
   - **Preprint** // [Less is More: Parameter-Free Text Classification with Gzip](https://arxiv.org/abs/2212.09410)
   - **Note** // The original paper had several issues related to [accuracy calculation](https://github.com/bazingagin/npc_gzip/issues/3) and [train-test leakage](https://github.com/bazingagin/npc_gzip/issues/13)
-* (Lan *et al.*, 2022) [Minimum Description Length Recurrent Neural Networks](https://direct.mit.edu/tacl/article/doi/10.1162/tacl_a_00489/112499/Minimum-Description-Length-Recurrent-Neural)
-* (Li *et al.*, 2025) [Lossless data compression by large models](https://www.nature.com/articles/s42256-025-01033-7)
-* (Maguire *et al.*, 2015) [Compressionism: A Theory of Mind Based on Data Compression](https://norma.ncirl.ie/2114/)
-* (Mittu *et al.*, 2024) [FineZip: Pushing the Limits of Large Language Models for Practical Lossless Text Compression](https://arxiv.org/abs/2409.17141v1)
-* (Pan *et al.*, 2025) [Understanding LLM Behaviors via Compression: Data Generation, Knowledge Acquisition and Scaling Laws](https://arxiv.org/abs/2504.09597)
-* (Rao, 2025) [The Limits of AI Explainability: An Algorithmic Information Theory Approach](https://arxiv.org/abs/2504.20676)
-* (Schmidhuber, 1997) [Discovering Neural Nets with Low Kolmogorov Complexity and High Generalization Capability](https://pubmed.ncbi.nlm.nih.gov/12662875/)
-* (Sculley & Brodley, 2006) [Compression and machine learning: a new perspective on feature space vectors](https://www.semanticscholar.org/paper/Compression-and-machine-learning%3A-a-new-perspective-Sculley-Brodley/70e8e1457aadbee439d47a2fe071007b1cf1dece)
-* (Teahan & Harper, 2003) [Using compression-based language models for text categorization](https://boston.lti.cs.cmu.edu/callan/Workshops/lmir01/WorkshopProcs/Papers/teahan.pdf)
-* (Valmeekam *et al.*, 2023) [LLMZip: Lossless Text Compression using Large Language Models](https://arxiv.org/abs/2306.04050)
-* (Yang, Mandt & Theis, 2022) [An Introduction to Neural Data Compression](https://arxiv.org/abs/2202.06533)
-* (Yu *et al.*, 2023) [White-Box Transformers via Sparse Rate Reduction: Compression Is All There Is?](https://arxiv.org/abs/2311.13110)
-* (Ziv & LeCun, 2024) [To Compress or Not to Compress—Self-Supervised Learning and Information Theory: A Review](https://www.mdpi.com/1099-4300/26/3/252)
+- (Lan *et al.*, 2022) [Minimum Description Length Recurrent Neural Networks](https://direct.mit.edu/tacl/article/doi/10.1162/tacl_a_00489/112499/Minimum-Description-Length-Recurrent-Neural)
+- (Li *et al.*, 2025) [Lossless data compression by large models](https://www.nature.com/articles/s42256-025-01033-7)
+- (Maguire *et al.*, 2015) [Compressionism: A Theory of Mind Based on Data Compression](https://norma.ncirl.ie/2114/)
+- (Mittu *et al.*, 2024) [FineZip: Pushing the Limits of Large Language Models for Practical Lossless Text Compression](https://arxiv.org/abs/2409.17141v1)
+- (Moran & Yehudayoff, 2015) [Sample compression schemes for VC classes](https://arxiv.org/abs/1503.06960)
+- (Nannen, 2010) [A Short Introduction to Model Selection, Kolmogorov Complexity and Minimum Description Length (MDL)](https://arxiv.org/abs/1005.2364)
+- (Pan *et al.*, 2025) [Understanding LLM Behaviors via Compression: Data Generation, Knowledge Acquisition and Scaling Laws](https://arxiv.org/abs/2504.09597)
+- (Rao, 2025) [The Limits of AI Explainability: An Algorithmic Information Theory Approach](https://arxiv.org/abs/2504.20676)
+- (Ratsaby, 2010) [Prediction by Compression](https://arxiv.org/abs/1008.5078)
+- (Rissanen, 1978) [Modeling by shortest data description](https://www.sciencedirect.com/science/article/abs/pii/0005109878900055)
+- (Rissanen, 2005) [Complexity and Information in Modeling](https://web.archive.org/web/20160518102247/http://www.mdl-research.net/jorma.rissanen/pub/vela.pdf)
+- (Schmidhuber, 1997) [Discovering Neural Nets with Low Kolmogorov Complexity and High Generalization Capability](https://pubmed.ncbi.nlm.nih.gov/12662875/)
+- (Sculley & Brodley, 2006) [Compression and machine learning: a new perspective on feature space vectors](https://www.semanticscholar.org/paper/Compression-and-machine-learning%3A-a-new-perspective-Sculley-Brodley/70e8e1457aadbee439d47a2fe071007b1cf1dece)
+- (Teahan & Harper, 2003) [Using compression-based language models for text categorization](https://boston.lti.cs.cmu.edu/callan/Workshops/lmir01/WorkshopProcs/Papers/teahan.pdf)
+- (Valmeekam *et al.*, 2023) [LLMZip: Lossless Text Compression using Large Language Models](https://arxiv.org/abs/2306.04050)
+- (Vitányi & Li, 1997) [On prediction by data compression](https://link.springer.com/chapter/10.1007/3-540-62858-4_69)
+- (Yang, Mandt & Theis, 2022) [An Introduction to Neural Data Compression](https://arxiv.org/abs/2202.06533)
+- (Yu *et al.*, 2023) [White-Box Transformers via Sparse Rate Reduction: Compression Is All There Is?](https://arxiv.org/abs/2311.13110)
+- (Ziv & LeCun, 2024) [To Compress or Not to Compress—Self-Supervised Learning and Information Theory: A Review](https://www.mdpi.com/1099-4300/26/3/252)
 
 ### Books 📚
 
+- (Grünwald, 2007) [The Minimum Description Length](https://homepages.cwi.nl/~pdg/book/book.html)
+- (Hutter, 2005) [Universal Artificial Intelligence](https://hutter1.net/ai/uaibook.htm)
 - (MacKay, 2003) [Information Theory, Inference and Learning Algorithms](https://www.cambridge.org/gb/universitypress/subjects/computer-science/pattern-recognition-and-machine-learning/information-theory-inference-and-learning-algorithms)
 - (Shannon & Weaver, 1949) [Mathematical Theory of Communication](https://web.archive.org/web/20000823215030/http://cm.bell-labs.com/cm/ms/what/shannonday/shannon1948.pdf)
 - (Mohri, Rostamizadeh & Talwalkar, 2018) [Foundations of Machine Learning](https://mitpress.mit.edu/9780262039406/foundations-of-machine-learning/)
 
 ### Blogs/News ✍️
 
-* (Andrew's Blog, 2024) [Using an LLM for text compression](https://blog.cleverdomain.org/using-an-llm-for-text-compression)
-* (ArsTechnica, 2023) [AI language models can exceed PNG and FLAC in lossless compression, says study](https://arstechnica.com/information-technology/2023/09/ai-language-models-can-exceed-png-and-flac-in-lossless-compression-says-study/)
-* (Bactra, 2023) ["Attention", "Transformers", in Neural Network "Large Language Models"](http://bactra.org/notebooks/nn-attention-and-transformers.html)
-* (Confessions of a Code Addict, 2023) [How Language Models Beat PNG and FLAC Compression & What It Means](https://blog.codingconfessions.com/p/language-modeling-is-compression)
-* (Hackaday, 2023) [Text compression gets weirdly efficient with LLMs](https://hackaday.com/2023/08/27/text-compression-gets-weirdly-efficient-with-llms/)
-* (Hendrick Erz, 2023) [Why gzip just beat a Large Language Model](https://www.hendrik-erz.de/post/why-gzip-just-beat-a-large-language-model)
-* (IEEE, 2023) [Intelligence via Compression of Information](https://www.computer.org/publications/tech-news/community-voices/intelligence-via-compression-of-information)
-* (Ken Schutte, 2023a) [Bad numbers in the "gzip beats BERT" paper?](https://kenschutte.com/gzip-knn-paper/)
-* (Ken Schutte, 2023b) ["Gzip beats BERT?" Part 2: dataset issues, improved speed, and results](https://kenschutte.com/gzip-knn-paper2/)
-* (LSE, 2023) [Compression and complexity: Making sense of Artificial Intelligence](https://blogs.lse.ac.uk/europpblog/2023/06/30/compression-and-complexity-making-sense-of-artificial-intelligence/)
-* (MaximumCompression, 2025) [AI and File Compression: How Artificial Intelligence Is Shaping the Future of Data Reduction](https://www.maximumcompression.com/ai-and-file-compression-how-artificial-intelligence-is-shaping-the-future-of-data-reduction/)
-* (o565, 2024) [DRINK ME: (Ab)Using a LLM to compress text](https://o565.com/llm-text-compression/)
-* (TechXplore, 2025) [Algorithm based on LLMs doubles lossless data compression rates](https://techxplore.com/news/2025-05-algorithm-based-llms-lossless-compression.html)
-* (The New Yorker, 2023) [ChatGPT is a blurry JPEG of the Web](https://www.newyorker.com/tech/annals-of-technology/chatgpt-is-a-blurry-jpeg-of-the-web)
+- (Andrew's Blog, 2024) [Using an LLM for text compression](https://blog.cleverdomain.org/using-an-llm-for-text-compression)
+- (ArsTechnica, 2023) [AI language models can exceed PNG and FLAC in lossless compression, says study](https://arstechnica.com/information-technology/2023/09/ai-language-models-can-exceed-png-and-flac-in-lossless-compression-says-study/)
+- (Bactra, 2023) ["Attention", "Transformers", in Neural Network "Large Language Models"](http://bactra.org/notebooks/nn-attention-and-transformers.html)
+- (Confessions of a Code Addict, 2023) [How Language Models Beat PNG and FLAC Compression & What It Means](https://blog.codingconfessions.com/p/language-modeling-is-compression)
+- (Hackaday, 2023) [Text compression gets weirdly efficient with LLMs](https://hackaday.com/2023/08/27/text-compression-gets-weirdly-efficient-with-llms/)
+- (Hendrick Erz, 2023) [Why gzip just beat a Large Language Model](https://www.hendrik-erz.de/post/why-gzip-just-beat-a-large-language-model)
+- (IEEE, 2023) [Intelligence via Compression of Information](https://www.computer.org/publications/tech-news/community-voices/intelligence-via-compression-of-information)
+- (Jakobs.dev, 2023) [78% MNIST accuracy using GZIP in under 10 lines of code](https://jakobs.dev/solving-mnist-with-gzip/)
+- (Ken Schutte, 2023a) [Bad numbers in the "gzip beats BERT" paper?](https://kenschutte.com/gzip-knn-paper/)
+- (Ken Schutte, 2023b) ["Gzip beats BERT?" Part 2: dataset issues, improved speed, and results](https://kenschutte.com/gzip-knn-paper2/)
+- (Learn and Burn, 2023) [An elegant equivalence between LLMs and data compression](https://learnandburn.ai/p/an-elegant-equivalence-between-llms)
+- (LSE, 2023) [Compression and complexity: Making sense of Artificial Intelligence](https://blogs.lse.ac.uk/europpblog/2023/06/30/compression-and-complexity-making-sense-of-artificial-intelligence/)
+- (MaximumCompression, 2025) [AI and File Compression: How Artificial Intelligence Is Shaping the Future of Data Reduction](https://www.maximumcompression.com/ai-and-file-compression-how-artificial-intelligence-is-shaping-the-future-of-data-reduction/)
+- (o565, 2024) [DRINK ME: (Ab)Using a LLM to compress text](https://o565.com/llm-text-compression/)
+- (TechXplore, 2025) [Algorithm based on LLMs doubles lossless data compression rates](https://techxplore.com/news/2025-05-algorithm-based-llms-lossless-compression.html)
+- (The New Yorker, 2023) [ChatGPT is a blurry JPEG of the Web](https://www.newyorker.com/tech/annals-of-technology/chatgpt-is-a-blurry-jpeg-of-the-web)
 
 ### Code & Tools 💻
 
 **Implementation Repositories**
 
-- [`bazingagin/npc_gzip`](https://github.com/bazingagin/npc_gzip) - original code for Jiang et al. (2023)
-- [`kts/gzip-knn`](https://github.com/kts/gzip-knn) - a "fair" reimplementation of the original
-- [`Sentdex/Simple-kNN-Gzip`](https://github.com/Sentdex/Simple-kNN-Gzip) - a simplified version
+- [`bazingagin/npc_gzip`](https://github.com/bazingagin/npc_gzip) - original code for Jiang *et al.* (2023)
+  - [`kts/gzip-knn`](https://github.com/kts/gzip-knn) - a "fair" reimplementation of the original
+  - [`Sentdex/Simple-kNN-Gzip`](https://github.com/Sentdex/Simple-kNN-Gzip) - a simplified version
+- [`google-deepmind/language_modeling_is_compression`](https://github.com/google-deepmind/language_modeling_is_compression) - original code from Delétang *et al.* (2023)
+- [`hkust-nlp/llm-compression-intelligence`](https://github.com/hkust-nlp/llm-compression-intelligence) - original code from Huang *et al.* (2024)
 
 **Fabrice Bellard's Experiments**
 
@@ -126,13 +144,19 @@ The classifier automatically downloads the AG News dataset and performs text cla
 - [`ts_zip`](https://bellard.org/ts_zip/) - text compression using LLMs (RWKV)
 - [`ts_sms`](https://bellard.org/ts_sms/) - short message compression with LLMs
 
+**Other Tools**
+
+- Byron Knoll's [CMIX](https://www.byronknoll.com/cmix.html)
+
 ### Learn More 🚀
 
 **Must-Watch Videos**
 
-- [Intro to Large Language Models](https://www.youtube.com/watch?v=zjkBMFhNj_g) - Andrej Karpathy's excellent overview
-- [Compression for AGI](https://www.youtube.com/watch?v=dO4TPJkeaaU) - Jack Rae at Stanford MLSys
-- [Gzip is all You Need!](https://www.youtube.com/watch?v=jkdWzvMOPuo) - sentdex's practical take
+- [An Observation on Generalization](https://www.youtube.com/live/AKMuA_TVz3A) by Ilya Sutskever
+- [Intro to Large Language Models](https://www.youtube.com/watch?v=zjkBMFhNj_g) by Andrej Karpathy
+- [Compression for AGI](https://www.youtube.com/watch?v=dO4TPJkeaaU) by Jack Rae at Stanford MLSys
+- [Prediction as Compression](https://www.youtube.com/watch?v=wSQo2xUiSf0) by Jeffrey Vitter
+- [Gzip is all You Need!](https://www.youtube.com/watch?v=jkdWzvMOPuo) by sentdex
 
 **Thought-Provoking Reads**
 
@@ -144,6 +168,8 @@ The classifier automatically downloads the AG News dataset and performs text cla
 
 - [Hutter Prize](http://prize.hutter1.net/index.htm) - The famous compression challenge for AGI
 - [Data Compression Explained](https://mattmahoney.net/dc/dce.html) - Matt Mahoney's comprehensive guide
+- [Data Compression](https://www.data-compression.info/) - The Data Compression resource on the Internet
+- [Data Compression with Arithmetic Encoding](https://web.archive.org/web/20240818223502/https://marknelson.us/posts/2014/10/19/data-compression-with-arithmetic-coding.html) - an "annoyingly long" version of a 1991 article by Mark Nelson
 - [AI is just compression?](https://www.reddit.com/r/AskComputerScience/comments/um18by/ai_is_just_compression/) - Reddit discussion
 
 ---
