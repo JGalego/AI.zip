@@ -135,6 +135,7 @@ The classifier automatically downloads the AG News dataset and performs text cla
 
 **Implementation Repositories**
 
+- [`AlexBuz/llama-zip`](https://github.com/AlexBuz/llama-zip) - a lossless compression utility that leverages a user-provided LLM as the probabilistic model for an arithmetic coder
 - [`bazingagin/npc_gzip`](https://github.com/bazingagin/npc_gzip) - original code for Jiang *et al.* (2023)
   - [`kts/gzip-knn`](https://github.com/kts/gzip-knn) - a "fair" reimplementation of the original
   - [`Sentdex/Simple-kNN-Gzip`](https://github.com/Sentdex/Simple-kNN-Gzip) - a simplified version
@@ -147,6 +148,11 @@ The classifier automatically downloads the AG News dataset and performs text cla
 - [`nncp`](https://bellard.org/nncp/) - neural network-based practical lossless compressor
 - [`ts_zip`](https://bellard.org/ts_zip/) - text compression using LLMs (RWKV)
 - [`ts_sms`](https://bellard.org/ts_sms/) - short message compression with LLMs
+
+**Other Stuff**
+
+- [`microsoft/LLMLingua`](https://github.com/microsoft/LLMLingua) - uses a compact, well-trained language model to identify and remove non-essential tokens in prompts
+- [`vllm-project/llm-compressor`] - Transformers-compatible library for applying various compression algorithms to LLMs for optimized deployment with vLLM
 
 **Other Tools**
 
