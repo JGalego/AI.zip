@@ -4,7 +4,7 @@
 #   "more-itertools==10.8.0",
 #   "numpy==2.3.2",
 #   "tqdm==4.67.1",
-#   "llama-cpp-python==0.2.88"
+#   "llama-cpp-python==0.3.16"
 # ]
 # ///
 
@@ -422,10 +422,18 @@ class LlamaZip:
             3. Forces the model to predict that token (by setting its logit to infinity)
             """
             nonlocal next_token_idx
+            
+            # Check if we've finished processing all tokens
+            if next_token_idx >= len(tokens):
+                # Force EOS to stop generation
+                logits[self.model.token_eos()] = np.inf
+                return logits
+                
             if interrupted and next_token_idx < len(tokens) - 1:
                 next_token_idx = len(tokens) - 1
                 if self.verbose:
                     print(file=sys.stderr)
+                    
             next_token = tokens[next_token_idx]
             next_token_idx += 1
             
@@ -439,10 +447,11 @@ class LlamaZip:
             return logits
 
         def should_stop(tokens_so_far, logits):
-            """Stop generation when we reach EOS or context limit."""
+            """Stop generation when we reach EOS or context limit or when we've processed all tokens."""
             return (
-                np.argmax(logits) == self.model.token_eos()
-                or len(tokens_so_far) == self.model.n_ctx()
+                next_token_idx >= len(tokens) or
+                np.argmax(logits) == self.model.token_eos() or
+                len(tokens_so_far) == self.model.n_ctx()
             )
 
         # Prepare for compression
@@ -474,7 +483,7 @@ class LlamaZip:
                 self.model.generate(
                     tokens=[self.model.token_bos()] + tokens[start_idx:next_token_idx],
                     temp=0.0,  # Deterministic generation
-                    logits_processor=process_logits,
+                    logits_processor=[process_logits],
                     stopping_criteria=should_stop,
                 )
             )
@@ -519,11 +528,19 @@ class LlamaZip:
             We use the probability distribution to decode it from
             the compressed stream.
             """
+            nonlocal done
+            
+            if done:
+                # Already finished, force EOS to stop generation
+                logits[self.model.token_eos()] = np.inf
+                return logits
+            
             cdf = self.compute_cdf(logits)
             next_token = token_decoder.decode_symbol(cdf)
             logits[next_token] = np.inf
             
             if next_token == self.model.token_eos():
+                done = True
                 return logits
             
             # Convert token back to bytes
@@ -569,7 +586,7 @@ class LlamaZip:
                 self.model.generate(
                     tokens=[self.model.token_bos()] + seen_tokens[start_idx:],
                     temp=0.0,
-                    logits_processor=process_logits,
+                    logits_processor=[process_logits],
                     stopping_criteria=should_stop,
                 )
             )
