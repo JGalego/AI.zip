@@ -233,7 +233,7 @@ If the actual next token is `the` (token 0), the arithmetic coder narrows its cu
 
 The exact number of bits depends on the current interval state, but the trend is clear: frequent tokens get shorter codes, rare tokens get longer codes, achieving near-optimal compression as predicted by information theory.
 
-> 📊 **Validation:** All calculations verified using actual Phi-3 tokenization by [`simulate_compression_breakdown.py`](simulate_compression_breakdown.py) - run `uv run simulate_compression_breakdown.py` to see the real values!
+> 📊 **Validation:** All calculations verified using actual Phi-3 tokenization by [`compression_breakdown.py`](extras/simulate_compression_breakdown.py) - run `uv run extras/compression_breakdown.py` to see the real values!
 
 #### Compression Performance
 
