@@ -6,6 +6,29 @@ This repository investigates the fascinating relationship between AI and compres
 
 The core insight is that **compression and intelligence are deeply connected** - to compress data effectively, you need to understand its patterns and structure.
 
+## Table of Contents 📚
+
+- [The Big Idea 💡](#the-big-idea-💡)
+- [Key Insights & Research Themes ☀️](#key-insights--research-themes-☀️)
+  - [Core Concepts](#core-concepts)
+  - [Research Highlights](#research-highlights)
+- [Examples 🛠️](#examples-🛠️)
+  - [Gzip Text Classifier 🧪](#gzip-text-classifier-🧪)
+  - [LLM-Based Lossless Compression 🤖](#llm-based-lossless-compression-🤖)
+    - [The Core Algorithm](#the-core-algorithm)
+    - [Mathematical Foundation](#mathematical-foundation)
+    - [Technical Implementation](#technical-implementation)
+    - [Compression Performance](#compression-performance)
+- [References 📖](#references-📖)
+  - [Articles 📑](#articles-📑)
+  - [Books 📚](#books-📚)
+  - [Blogs/News ✍️](#blogsnews-️✍️)
+  - [Code & Tools 💻](#code--tools-💻)
+  - [Learn More 🚀](#learn-more-🚀)
+- [Fun Extras 🎨](#fun-extras-🎨)
+- [Contributing 🤝](#contributing-🤝)
+- [License 📜](#license-📜)
+
 ## The Big Idea
 
 The relationship between compression and intelligence isn't just theoretical. As articulated in the famous Hutter Prize challenge: *"Understanding is compression."* 
@@ -15,25 +38,6 @@ Large language models achieve remarkable compression ratios precisely because th
 > *"**Think of ChatGPT as a blurry JPEG of all the text on the Web.** It retains much of the information on the Web, in the same way that a JPEG retains much of the information of a higher-resolution image, but, if you’re looking for an exact sequence of bits, you won’t find it; all you will ever get is an approximation. But, because the approximation is presented in the form of grammatical text, which ChatGPT excels at creating, it’s usually acceptable."* - Ted Chiang
 
 <img src="ai2zip.png" title="Adapted from Andrej Karpathy"/>
-
-## Implementation: Gzip Text Classifier 🧪
-
-The `gzip_classifier.py` demonstrates how simple compression algorithms can be surprisingly effective for text classification tasks.
-
-Based on the methodology from Jiang *et al.* (2023), this implementation uses:
-
-- **Normalized Compression Distance (NCD)** to measure text similarity
-- **k-Nearest Neighbors (k-NN)** for classification
-- **Parallel processing** for performance optimization
-- **Adaptive strategies** that scale from small to large datasets
-
-### Quick Start
-
-```bash
-uv run gzip_classifier.py
-```
-
-The classifier automatically downloads the AG News dataset and performs text classification via k-nearest neighbors (k-NN) using only gzip compression - no neural networks required!
 
 ## Key Insights & Research Themes 💡
 
@@ -61,6 +65,138 @@ The classifier automatically downloads the AG News dataset and performs text cla
 - Accuracy issues in the original "gzip beats BERT" findings ([Ken Schutte's analysis](https://kenschutte.com/gzip-knn-paper/))
 - Train-test leakage problems in compression-based classification
 - Limitations of compression as a general intelligence metric
+
+## Examples 🛠️
+
+### Gzip Text Classifier 🧪
+
+#### Overview
+
+`gzip_classifier.py` demonstrates how simple compression algorithms can be surprisingly effective for text classification tasks.
+
+Based on the methodology from Jiang *et al.* (2023), this implementation uses:
+
+- **Normalized Compression Distance (NCD)** to measure text similarity
+- **k-Nearest Neighbors (k-NN)** for classification
+- **Parallel processing** for performance optimization
+- **Adaptive strategies** that scale from small to large datasets
+
+#### Quick Start
+
+```bash
+uv run gzip_classifier.py
+```
+
+The classifier automatically downloads the AG News dataset and performs text classification via k-nearest neighbors (k-NN) using only gzip compression - no neural networks required!
+
+### LLM-Based Lossless Compression 🤖
+
+#### Overview
+
+`llama_zip.py` demonstrates how large language models can achieve superior lossless compression by leveraging their deep understanding of linguistic patterns and structures.
+
+#### Quick Start
+
+```bash
+# Compress text using a local LLaMA model
+uv run llama_zip.py model.gguf -c "Hello, world!" -f base64
+
+# Decompress the output
+uv run llama_zip.py model.gguf -d <base64_output> -f base64
+
+# Interactive mode for experimentation
+uv run llama_zip.py model.gguf -i
+```
+
+The implementation showcases how the marriage of modern language models with classical information theory yields state-of-the-art lossless compression, especially for text-heavy data.
+
+#### The Core Algorithm
+
+The implementation combines **language modeling** with **arithmetic coding** to achieve optimal compression:
+
+1. **Probabilistic Modeling**: The LLM predicts probability distributions $P(x_t | x_{<t})$ for each token $x_t$ given context $x_{<t}$
+2. **Arithmetic Encoding**: These probabilities drive an arithmetic coder that assigns optimal bit lengths to tokens
+3. **Lossless Reconstruction**: The same model and probabilities enable perfect decompression
+
+#### Mathematical Foundation
+
+**Information-Theoretic Optimality**: Given a probability distribution $P(X)$, the optimal code length for symbol $x$ is $-\log_2 P(x)$ bits (Shannon's theorem). The expected code length approaches the entropy:
+
+$$H(X) = -\sum_{x} P(x) \log_2 P(x)$$
+
+**Arithmetic Coding Mechanics**: Unlike prefix codes (e.g., Huffman), arithmetic coding represents entire sequences as single fractional numbers in $[0,1)$. The algorithm maintains an interval $[\text{low}, \text{high})$ that narrows with each symbol.
+
+**Interval Subdivision**: For a symbol $s_i$ with probability $p_i$ and cumulative probability $F(s_i) = \sum_{j<i} p_j$:
+
+$$\text{range} = \text{high} - \text{low}$$
+$$\text{low}_{\text{new}} = \text{low} + \text{range} \cdot F(s_i)$$
+$$\text{high}_{\text{new}} = \text{low} + \text{range} \cdot F(s_{i+1})$$
+
+**Encoding Process**: Given sequence $x_1, x_2, \ldots, x_n$, the final interval uniquely identifies the sequence. Any number within this interval can decode back to the original sequence.
+
+**Cumulative Distribution**: The implementation uses integer arithmetic with scaled frequencies. For vocabulary size $V$ and scale factor $S$:
+
+$$\text{freq}_i = \max(1, \text{round}(S \cdot p_i))$$
+$$\text{cumfreq}_i = \sum_{j=0}^{i} \text{freq}_j$$
+
+**Precision and Renormalization**: To prevent numerical underflow, the coder performs renormalization when intervals become too narrow:
+
+- **MSB identical**: When $\text{low}$ and $\text{high}$ share the same most significant bit, output that bit and left-shift both bounds
+- **Underflow handling**: When $\text{low} \geq 2^{k-1}$ and $\text{high} < 2^k$ for middle range, apply underflow transformation
+
+**Theoretical Compression Bound**: For a sequence $X = x_1, \ldots, x_n$ with model probabilities $Q(x_i | x_{<i})$:
+
+$$\text{Code Length} = -\sum_{i=1}^{n} \log_2 Q(x_i | x_{<i}) + O(1)$$
+
+This approaches the cross-entropy $H_Q(X)$ between the true distribution and model, making compression quality directly tied to model accuracy.
+
+**LLM Integration**: The key insight is using the LLM's next-token predictions $P(x_t | x_{<t})$ as the probability model for arithmetic coding. Better language models → better probability estimates → better compression.
+
+#### Technical Implementation
+
+**Byte-to-Unicode Mapping**: Binary data is encoded using Unicode [Private Use Area](https://en.wikipedia.org/wiki/Private_Use_Areas) (PUA) characters to make it processable by text-based LLMs:
+
+```python
+# Map invalid UTF-8 bytes to PUA range [0xE000, 0xE0FF]
+def bytes_to_utf8(data: bytes):
+    for chunk in Utf8Chunks(data):
+        for byte in chunk.invalid:
+            output.extend(chr(PUA_START + byte).encode("utf-8"))
+```
+
+**Context Window Management**: Uses sliding window approach with configurable overlap to handle sequences longer than the model's context limit:
+
+```python
+# Maintain context coherence across windows
+start_idx = max(0, next_token_idx - window_overlap)
+```
+
+**Probability Extraction**: Converts model logits to cumulative distribution functions for arithmetic coding:
+
+```python
+def compute_cdf(self, logits):
+    logprobs = self.model.logits_to_logprobs(logits)
+    probs = np.exp(logprobs).astype(np.float64)
+    freqs = np.maximum(1, np.round(FREQ_SCALE_FACTOR * probs))
+    return np.cumsum(freqs)
+```
+
+#### Compression Performance
+
+**Theoretical Bound**: The compression ratio is fundamentally limited by the cross-entropy between the true data distribution and the model's predictions:
+
+$$\text{Compression Ratio} \approx \frac{H_{\text{model}}(X)}{H_{\text{true}}(X)}$$
+
+**Practical Advantages**:
+- **Context-Aware**: Unlike traditional compressors, LLMs understand semantic context
+- **Adaptive**: Model predictions adapt to document style and content  
+- **Domain-Specific**: Fine-tuned models excel on specialized text types
+- **Multilingual**: Modern LLMs handle diverse languages and scripts
+
+**Trade-offs**:
+- **Computational Cost**: Requires GPU acceleration for practical speeds
+- **Model Size**: Large models needed for best compression ratios
+- **Deterministic**: Same model and settings required for decompression
 
 ## References 📖
 
