@@ -2,7 +2,9 @@
 
 ## Overview 🔎
 
-> *"Why unify information theory and machine learning? Because they are two sides of the same coin."* - David MacKay
+> *"Why unify information theory and machine learning? Because they are two sides of the same coin."*
+>
+> ― David MacKay
 
 This repository investigates the fascinating relationship between AI and compression through both theoretical exploration and practical implementation.
 
