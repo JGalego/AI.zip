@@ -2,11 +2,11 @@
 
 ## Overview 🔎
 
+> *"Why unify information theory and machine learning? Because they are two sides of the same coin."* - David MacKay
+
 This repository investigates the fascinating relationship between AI and compression through both theoretical exploration and practical implementation.
 
 The core insight is that **compression and intelligence are deeply connected** - to compress data effectively, you need to understand its patterns and structure.
-
-> *"**Why unify information theory and machine learning? Because they are two sides of the same coin.** In the 1960s, a single field, cybernetics, was populated by information theorists, computer scientists, and neuroscientists, all studying common problems. Information theory and machine learning still belong together. Brains are the ultimate compression and communication systems. And the state-of-the-art algorithms for both data compression and error-correcting codes use the same tools as machine learning."* -- David MacKay, 
 
 ## Table of Contents 📚
 
