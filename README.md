@@ -151,7 +151,7 @@ $$\text{cumfreq}_i = \sum_{j=0}^{i} \text{freq}_j$$
 
 **Theoretical Compression Bound:** For a sequence $X = x_1, \ldots, x_n$ with model probabilities $Q(x_i | x_{<i})$:
 
-$$\text{Code Length} = -\sum_{i=1}^{n} \log_2 Q(x_i | x_{<i}) + O(1)$$
+$$\text{Code Length} = -\sum_{i=1}^{n} \log_2 Q(x_{i} | x_{\lt i}) + O(1)$$
 
 This approaches the cross-entropy $H_Q(X)$ between the true distribution and model, making compression quality directly tied to model accuracy.
 
