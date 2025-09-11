@@ -1,6 +1,4 @@
-# AI.zip 🗜️
-
-## Overview 🔎
+# AI.zip 🗜️📁
 
 This repository investigates the fascinating relationship between AI and data compression through both theoretical exploration and practical implementation.
 
@@ -13,10 +11,6 @@ The core insight is that **compression and intelligence are deeply connected** -
 > *"**Prediction is intuitively related to understanding.** If you understand a sequence, then you can predict it. If you understand a language, then you could predict what word might appear next in a paragraph in that language. If you understand an image, then you could predict what might lie under portions of the image that are covered up. Alternatively, random data has no meaning and is not predictable. This intuition suggests that prediction or compression could be used to test or measure understanding."*
 > 
 > ― Matt Mahoney, [Data Compression Explained](https://mattmahoney.net/dc/dce.html)
-
-> *"**Think of ChatGPT as a blurry JPEG of all the text on the Web.** It retains much of the information on the Web, in the same way that a JPEG retains much of the information of a higher-resolution image, but, if you're looking for an exact sequence of bits, you won't find it; all you will ever get is an approximation. But, because the approximation is presented in the form of grammatical text, which ChatGPT excels at creating, it's usually acceptable."*
->
-> ― Ted Chiang, [ChatGPT is a blurry JPEG of the Web](https://www.newyorker.com/tech/annals-of-technology/chatgpt-is-a-blurry-jpeg-of-the-web)
 
 ![One of Ray Solomonoff's doodle](https://raysolomonoff.com/doodles/doodlepartresize300.jpg)
 
@@ -60,11 +54,25 @@ The core insight is that **compression and intelligence are deeply connected** -
 
 - **[Hutter's Universal Artificial Intelligence](https://hutter1.net/ai/) (2005):** the optimal agent compresses its experience into the shortest program that predicts future observations
 
-**LLMs as Compressors:** Large language models (LLMs) can achieve remarkable compression ratios precisely because they capture deep patterns in human language and knowledge. Recent research shows that LLMs, while trained primarily on text, are really *general-purpose* lossless compressors that can outperform traditional compressors on image and audio data (Déletang *et al.*, 2023).
+**LLMs as Compressors:** modern Large Language Models (LLMs) reveal a profound connection between language understanding and data compression. They demonstrate how intelligence naturally leads to efficient information encoding through two complementary approaches.
 
-**The AGI Connection:** If intelligence emerges from finding minimal descriptions of our observations, then the path to AGI runs directly through compression. Better compression algorithms don't just save storage - they represent deeper understanding of the world.
+**Lossy Compression > Training:** during training, LLMs perform massive [*lossy* compression on Internet-scale text data](https://www.youtube.com/watch?v=zjkBMFhNj_g&t=257s). Trained on trillions of tokens, the model's billions of parameters become a compact representation of human knowledge and linguistic patterns.
 
 <img src="ai2zip.png" title="Adapted from Andrej Karpathy"/>
+
+As Ted Chiang elegantly explains, this process creates a "blurry but useful" compression of human knowledge:
+
+> *"**Think of ChatGPT as a blurry JPEG of all the text on the Web.** It retains much of the information on the Web, in the same way that a JPEG retains much of the information of a higher-resolution image, but, if you're looking for an exact sequence of bits, you won't find it; all you will ever get is an approximation. But, because the approximation is presented in the form of grammatical text, which ChatGPT excels at creating, it's usually acceptable."*
+>
+> ― Ted Chiang, [ChatGPT is a blurry JPEG of the Web](https://www.newyorker.com/tech/annals-of-technology/chatgpt-is-a-blurry-jpeg-of-the-web)
+
+**Lossless Compression > Prediction:** the trained model can then be used for *lossless* compression by leveraging its predictive capabilities. The LLM generates probability distributions over next tokens, which drives entropy-based algorithms like arithmetic coding to achieve optimal compression ratios (Li *et al.*, 2025):
+
+![LMCompress](images/lmcompress.png)
+
+**Universal Compression:** remarkably, LLMs trained primarily on text data can actually function as *general-purpose* lossless compressors. Recent research shows they can outperform traditional algorithms even on non-textual data like images and audio, suggesting that language modeling captures fundamental patterns of information structure (Déletang *et al.*, 2023).
+
+**The AGI Connection:** If intelligence emerges from finding minimal descriptions of our observations, then the path to AGI runs directly through compression. Better compression algorithms don't just save storage - they represent deeper understanding of the world.
 
 ## Key Insights & Research Themes 💡
 
@@ -78,17 +86,20 @@ The core insight is that **compression and intelligence are deeply connected** -
 ### Research Highlights
 
 **🏆 Breakthrough Papers**
+
 - *Language Modeling is Compression* (Delétang *et al.*, 2023) - Shows LLMs can outperform traditional compressors
 - *"Low-Resource" Text Classification* (Jiang *et al.*, 2023) - The controversial "gzip beats BERT" paper
 - *Lossless data compression by large models* (Li *et al.*, 2025) - Latest advances in neural compression
 
-**🔥 Hot Topics** 
+**🔥 Hot Topics**
+
 - Neural data compression techniques
 - Compression-based few-shot learning
 - Information-theoretic analysis of deep learning
 - Scaling laws through compression lens
 
 **⚠️ Important Debates**
+
 - Accuracy issues in the original "gzip beats BERT" findings ([Ken Schutte's analysis](https://kenschutte.com/gzip-knn-paper/))
 - Train-test leakage problems in compression-based classification
 - Limitations of compression as a general intelligence metric
@@ -121,6 +132,8 @@ The classifier automatically downloads the AG News dataset and performs text cla
 #### Overview
 
 `llama_zip.py` demonstrates how large language models can achieve superior lossless compression by leveraging their deep understanding of linguistic patterns and structures.
+
+> 🙌 Adapted from [AlexBuz/llama-zip](https://github.com/AlexBuz/llama-zip), a lossless compression utility that leverages a user-provided LLM as the probabilistic model for an arithmetic coder
 
 #### Quick Start
 
@@ -444,6 +457,7 @@ This demonstrates how modern language models can serve as sophisticated probabil
 
 - (Grünwald, 2007) [The Minimum Description Length](https://homepages.cwi.nl/~pdg/book/book.html)
 - (Hutter, 2005) [Universal Artificial Intelligence](https://hutter1.net/ai/uaibook.htm)
+- (Li & Vitanyi, 2008) [An Introduction to Kolmogorov Complexity and Its Applications](https://link.springer.com/book/10.1007/978-3-030-11298-1)
 - (MacKay, 2003) [Information Theory, Inference and Learning Algorithms](https://www.cambridge.org/gb/universitypress/subjects/computer-science/pattern-recognition-and-machine-learning/information-theory-inference-and-learning-algorithms)
 - (Mézard & Montanari, 2009) [Information, Physics, and Computation](https://web.stanford.edu/~montanar/RESEARCH/book.html)
 - (Shannon & Weaver, 1949) [Mathematical Theory of Communication](https://web.archive.org/web/20000823215030/http://cm.bell-labs.com/cm/ms/what/shannonday/shannon1948.pdf)
