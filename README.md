@@ -2,13 +2,23 @@
 
 ## Overview 🔎
 
-> *"Why unify information theory and machine learning? Because they are two sides of the same coin."*
->
-> ― David MacKay
-
-This repository investigates the fascinating relationship between AI and compression through both theoretical exploration and practical implementation.
+This repository investigates the fascinating relationship between AI and data compression through both theoretical exploration and practical implementation.
 
 The core insight is that **compression and intelligence are deeply connected** - to compress data effectively, you need to understand its patterns and structure.
+
+> *"**Why unify information theory and machine learning?** Because they are two sides of the same coin."*
+>
+> ― David MacKay, [Information Theory, Inference and Learning Algorithms](https://www.cambridge.org/gb/universitypress/subjects/computer-science/pattern-recognition-and-machine-learning/information-theory-inference-and-learning-algorithms)
+
+> *"**Prediction is intuitively related to understanding.** If you understand a sequence, then you can predict it. If you understand a language, then you could predict what word might appear next in a paragraph in that language. If you understand an image, then you could predict what might lie under portions of the image that are covered up. Alternatively, random data has no meaning and is not predictable. This intuition suggests that prediction or compression could be used to test or measure understanding."*
+> 
+> ― Matt Mahoney, [Data Compression Explained](https://mattmahoney.net/dc/dce.html)
+
+> *"**Think of ChatGPT as a blurry JPEG of all the text on the Web.** It retains much of the information on the Web, in the same way that a JPEG retains much of the information of a higher-resolution image, but, if you're looking for an exact sequence of bits, you won't find it; all you will ever get is an approximation. But, because the approximation is presented in the form of grammatical text, which ChatGPT excels at creating, it's usually acceptable."*
+>
+> ― Ted Chiang, [ChatGPT is a blurry JPEG of the Web](https://www.newyorker.com/tech/annals-of-technology/chatgpt-is-a-blurry-jpeg-of-the-web)
+
+![One of Ray Solomonoff's doodle](https://raysolomonoff.com/doodles/doodlepartresize300.jpg)
 
 ## Table of Contents 📚
 
@@ -34,13 +44,25 @@ The core insight is that **compression and intelligence are deeply connected** -
 - [Contributing 🤝](#contributing-🤝)
 - [License 📜](#license-📜)
 
-## The Big Idea
+## The Big Idea 💡
 
-The relationship between compression and intelligence isn't just theoretical. As articulated in the famous Hutter Prize challenge: *"Understanding is compression."* 
+**Compressors $\rightleftarrows$ Predictors:** compression, prediction and inference are intimately related. If you can compress data well, you must have a good model for it. Most data compression algorithms are really just models of our data with a coder head. The reverse also holds true: if we have a good model of our data, we can compress it (our brains do it all the time). This equivalence relation between compression and prediction means that we can pretty much convert any compressor into a predictor, and vice versa. As articulated in the [Hutter Prize challenge](http://prize.hutter1.net/hfaq.htm#compai) FAQ:
 
-Large language models achieve remarkable compression ratios precisely because they capture deep patterns in human language and knowledge.
+> *"One can prove that the better you can compress, the better you can predict; and being able to predict [the environment] well is key for being able to act well."*
 
-> *"**Think of ChatGPT as a blurry JPEG of all the text on the Web.** It retains much of the information on the Web, in the same way that a JPEG retains much of the information of a higher-resolution image, but, if you’re looking for an exact sequence of bits, you won’t find it; all you will ever get is an approximation. But, because the approximation is presented in the form of grammatical text, which ChatGPT excels at creating, it’s usually acceptable."* - Ted Chiang
+**Understanding=Compression:** the corollary is that in order to fully understand data, we must find its most *compact* representation. This connects ancient philosophical arguments with cutting-edge research in AI and data compression algorithms:
+
+- **[Aristotle's Posterior Analytics](https://www.logicmuseum.com/authors/aristotle/posterioranalytics/posterioranalytics.htm) (4th century BC):** a better explanation uses fewer assumptions
+
+- **[Occam's Razor](https://math.ucr.edu/home/baez/physics/General/occam.html) (14th century):** the simplest, most elegant explanation is usually the correct one
+
+- **[Solomonoff's General Theory of Inductive Inference](https://raysolomonoff.com/) (1964):** if an algorithm creates the Universe, its observations can be predicted by its smallest executable archive
+
+- **[Hutter's Universal Artificial Intelligence](https://hutter1.net/ai/) (2005):** the optimal agent compresses its experience into the shortest program that predicts future observations
+
+**LLMs as Compressors:** Large language models (LLMs) can achieve remarkable compression ratios precisely because they capture deep patterns in human language and knowledge. Recent research shows that LLMs, while trained primarily on text, are really *general-purpose* lossless compressors that can outperform traditional compressors on image and audio data (Déletang *et al.*, 2023).
+
+**The AGI Connection:** If intelligence emerges from finding minimal descriptions of our observations, then the path to AGI runs directly through compression. Better compression algorithms don't just save storage - they represent deeper understanding of the world.
 
 <img src="ai2zip.png" title="Adapted from Andrej Karpathy"/>
 
@@ -259,7 +281,7 @@ $$\text{Compression Ratio} \approx \frac{H_{\text{model}}(X)}{H_{\text{true}}(X)
 
 #### Putting It All Together
 
-Let's see the complete compression pipeline in action using the Phi-3.1 model to compress a philosophical quote:
+Let's see the complete compression pipeline in action using the [Phi-3.1](https://huggingface.co/bartowski/Phi-3.1-mini-128k-instruct-GGUF) model to compress a philosophical quote:
 
 **Input Text:** `"There is no compression algorithm for experience"`
 
@@ -379,8 +401,9 @@ This demonstrates how modern language models can serve as sophisticated probabil
 - (Chen *et al.*, 2024a) [Information Compression in the AI Era: Recent Advances and Future Challenges](https://arxiv.org/abs/2406.10036)
 - (Chen *et al.*, 2024b) [Large Language Models for Lossless Image Compression: Next-Pixel Prediction in Language Space is All You Need](https://arxiv.org/abs/2411.12448)
 - (David, Moran & Yehudayoff, 2016) [On statistical learning via the lens of compression](https://arxiv.org/abs/1610.03592)
-- (Delétang *et al.*, 2023) [Language Modeling is Compression](https://arxiv.org/pdf/2309.10668)
+- (Delétang *et al.*, 2023) [Language Modeling is Compression](https://arxiv.org/abs/2309.10668)
 - (Dubois *et al.*, 2021) [Lossy Compression for Lossless Prediction](https://arxiv.org/abs/2106.10800)
+- (Franceschelli, Cevenini & Musolesi, 2024) [Training Foundation Models as Data Compression: On Information, Model Weights and Copyright Law](https://arxiv.org/abs/2407.13493v3)
 - (Frank, Chui & Witten, 2000) [Text categorization using compression models](https://ieeexplore.ieee.org/document/838202/)
 - (Goldblum *et al.*, 2023) [The No Free Lunch Theorem, Kolmogorov Complexity, and the Role of Inductive Biases in Machine Learning](https://arxiv.org/abs/2304.05366)
 - (Guo *et al.*, 2024) [Ranking LLMs by compression](https://arxiv.org/abs/2406.14171)
@@ -396,8 +419,9 @@ This demonstrates how modern language models can serve as sophisticated probabil
 - (Lan *et al.*, 2022) [Minimum Description Length Recurrent Neural Networks](https://direct.mit.edu/tacl/article/doi/10.1162/tacl_a_00489/112499/Minimum-Description-Length-Recurrent-Neural)
 - (Lester *et al.*, 2024) [Training LLMs over Neurally Compressed Text](https://arxiv.org/abs/2404.03626v1)
 - (Li *et al.*, 2025) [Lossless data compression by large models](https://www.nature.com/articles/s42256-025-01033-7)
-  - **Preprint:** [Understanding is Compression](https://arxiv.org/pdf/2407.07723)
+  - **Preprint:** [Understanding is Compression](https://arxiv.org/abs/2407.07723)
 - (Maguire *et al.*, 2015) [Compressionism: A Theory of Mind Based on Data Compression](https://norma.ncirl.ie/2114/)
+- (Mao, Pirk & Xue, 2025) [Lossless Compression of Large Language Model-Generated Text via Next-Token Prediction](https://arxiv.org/abs/2505.06297v1)
 - (Mittu *et al.*, 2024) [FineZip: Pushing the Limits of Large Language Models for Practical Lossless Text Compression](https://arxiv.org/abs/2409.17141v1)
 - (Moran & Yehudayoff, 2015) [Sample compression schemes for VC classes](https://arxiv.org/abs/1503.06960)
 - (Nannen, 2010) [A Short Introduction to Model Selection, Kolmogorov Complexity and Minimum Description Length (MDL)](https://arxiv.org/abs/1005.2364)
@@ -408,12 +432,13 @@ This demonstrates how modern language models can serve as sophisticated probabil
 - (Rissanen, 2005) [Complexity and Information in Modeling](https://web.archive.org/web/20160518102247/http://www.mdl-research.net/jorma.rissanen/pub/vela.pdf)
 - (Schmidhuber, 1997) [Discovering Neural Nets with Low Kolmogorov Complexity and High Generalization Capability](https://pubmed.ncbi.nlm.nih.gov/12662875/)
 - (Sculley & Brodley, 2006) [Compression and machine learning: a new perspective on feature space vectors](https://www.semanticscholar.org/paper/Compression-and-machine-learning%3A-a-new-perspective-Sculley-Brodley/70e8e1457aadbee439d47a2fe071007b1cf1dece)
+- (Solomonoff, 1964) [A Formal Theory of Inductive Inference, Part I](https://raysolomonoff.com/publications/1964pt1.pdf) and [II](https://raysolomonoff.com/publications/1964pt2.pdf)
 - (Teahan & Harper, 2003) [Using compression-based language models for text categorization](https://boston.lti.cs.cmu.edu/callan/Workshops/lmir01/WorkshopProcs/Papers/teahan.pdf)
 - (Valmeekam *et al.*, 2023) [LLMZip: Lossless Text Compression using Large Language Models](https://arxiv.org/abs/2306.04050)
 - (Vitányi & Li, 1997) [On prediction by data compression](https://link.springer.com/chapter/10.1007/3-540-62858-4_69)
 - (Yang, Mandt & Theis, 2022) [An Introduction to Neural Data Compression](https://arxiv.org/abs/2202.06533)
 - (Yu *et al.*, 2023) [White-Box Transformers via Sparse Rate Reduction: Compression Is All There Is?](https://arxiv.org/abs/2311.13110)
-- (Ziv & LeCun, 2024) [To Compress or Not to Compress—Self-Supervised Learning and Information Theory: A Review](https://www.mdpi.com/1099-4300/26/3/252)
+- (Ziv & LeCun, 2024) [To Compress or Not to Compress - Self-Supervised Learning and Information Theory: A Review](https://www.mdpi.com/1099-4300/26/3/252)
 
 ### Books 📚
 
