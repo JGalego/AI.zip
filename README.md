@@ -52,8 +52,6 @@ The core insight is that **compression and intelligence are deeply connected** -
 
 - **[Hutter's Universal Artificial Intelligence](https://hutter1.net/ai/) (2005):** the optimal agent compresses its experience into the shortest program that predicts future observations
 
-![MDL 🍳](mdl_fried_egg.png)
-
 **LLMs as Compressors:** modern Large Language Models (LLMs) reveal a profound connection between language understanding and data compression. They demonstrate how intelligence naturally leads to efficient information encoding through two complementary approaches.
 
 **Lossy Compression > Training:** during training, LLMs perform massive [*lossy* compression on Internet-scale text data](https://www.youtube.com/watch?v=zjkBMFhNj_g&t=257s). Trained on trillions of tokens, the model's billions of parameters become a compact representation of human knowledge and linguistic patterns.
