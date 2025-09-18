@@ -12,6 +12,10 @@ The core insight is that **compression and intelligence are deeply connected** -
 > 
 > ― Matt Mahoney, [Data Compression Explained](https://mattmahoney.net/dc/dce.html)
 
+> *"The history of science is the history of compression progress."
+> 
+> ― Jürgen Schmidhuber on [Lex Fridman's podcast](https://youtu.be/3FIo6evmweo?t=1537)
+
 ![One of Ray Solomonoff's doodle](https://raysolomonoff.com/doodles/doodlepartresize300.jpg)
 
 ## Table of Contents 📚
@@ -247,6 +251,7 @@ The CDF essentially partitions the unit interval $[0,1)$ into segments proportio
 
 ### Articles 📑
 
+- (Bell, Witten & Cleary, 1989) [Modeling for text compression](https://dl.acm.org/doi/10.1145/76894.76896)
 - (Bennet *et al.*, 1998) [Information Distance](https://cs.uwaterloo.ca/~mli/informationdistance.pdf)
 - (Blier & Ollivier, 2018) [The Description Length of Deep Learning Models](https://arxiv.org/abs/1802.07044)
 - (Buttrick, 2024) [Studying large language models as compression algorithms for human culture](https://www.cell.com/trends/cognitive-sciences/abstract/S1364-6613(24)00001-9)
@@ -265,6 +270,8 @@ The CDF essentially partitions the unit interval $[0,1)$ into segments proportio
 - (Heurtel-Depeiges *et al.*, 2024) [Compression via Pre-trained Transformers: A Study on Byte-Level Multimodal Data](https://arxiv.org/abs/2410.05078)
 - (Hinton & Camp, 1993) [Keeping the neural networks simple by minimizing the description length of the weights](https://dl.acm.org/doi/10.1145/168304.168306)
 - (Huang *et al.*, 2024) [Compression Represents Intelligence Linearly](https://arxiv.org/abs/2404.09937)
+- (Hutchens & Alder, 1997) [Language Acquisition and Data Compression](https://dl.acm.org/doi/book/10.5555/901498)
+- (Hutchens & Alder, 1998) [Finding structure via compression](https://dl.acm.org/doi/10.5555/1603899.1603913)
 - (Jaynes, 1957) [Information Theory and Statistical Mechanics](https://bayes.wustl.edu/etj/articles/theory.1.pdf)
 - (Jiang, 1999) [Image compression with neural networks – A survey](https://www.sciencedirect.com/science/article/abs/pii/S0923596598000411)
 - (Jiang *et al.*, 2023) ["Low-Resource" Text Classification: A Parameter-Free Classification Method with Compressors](https://aclanthology.org/2023.findings-acl.426)
@@ -287,6 +294,7 @@ The CDF essentially partitions the unit interval $[0,1)$ into segments proportio
 - (Rissanen, 1978) [Modeling by shortest data description](https://www.sciencedirect.com/science/article/abs/pii/0005109878900055)
 - (Rissanen, 2005) [Complexity and Information in Modeling](https://web.archive.org/web/20160518102247/http://www.mdl-research.net/jorma.rissanen/pub/vela.pdf)
 - (Schmidhuber, 1997) [Discovering Neural Nets with Low Kolmogorov Complexity and High Generalization Capability](https://pubmed.ncbi.nlm.nih.gov/12662875/)
+- (Schmidhuber, 2008) [Driven by Compression Progress](https://arxiv.org/abs/0812.4360)
 - (Sculley & Brodley, 2006) [Compression and machine learning: a new perspective on feature space vectors](https://www.semanticscholar.org/paper/Compression-and-machine-learning%3A-a-new-perspective-Sculley-Brodley/70e8e1457aadbee439d47a2fe071007b1cf1dece)
 - (Solomonoff, 1964) [A Formal Theory of Inductive Inference, Part I](https://raysolomonoff.com/publications/1964pt1.pdf) and [II](https://raysolomonoff.com/publications/1964pt2.pdf)
 - (Teahan & Harper, 2003) [Using compression-based language models for text categorization](https://boston.lti.cs.cmu.edu/callan/Workshops/lmir01/WorkshopProcs/Papers/teahan.pdf)
@@ -299,7 +307,7 @@ The CDF essentially partitions the unit interval $[0,1)$ into segments proportio
 ### Books 📚
 
 - (Grünwald, 2007) [The Minimum Description Length](https://homepages.cwi.nl/~pdg/book/book.html)
-- (Hutter, 2005) [Universal Artificial Intelligence](https://hutter1.net/ai/uaibook.htm)
+- (Hutter, 2005) [Universal Artificial Intelligence: Sequential Decisions Based on Algorithmic Probability](https://hutter1.net/ai/uaibook.htm)
 - (Li & Vitanyi, 2008) [An Introduction to Kolmogorov Complexity and Its Applications](https://link.springer.com/book/10.1007/978-3-030-11298-1)
 - (MacKay, 2003) [Information Theory, Inference and Learning Algorithms](https://www.cambridge.org/gb/universitypress/subjects/computer-science/pattern-recognition-and-machine-learning/information-theory-inference-and-learning-algorithms)
 - (Mézard & Montanari, 2009) [Information, Physics, and Computation](https://web.stanford.edu/~montanar/RESEARCH/book.html)
@@ -390,6 +398,14 @@ The CDF essentially partitions the unit interval $[0,1)$ into segments proportio
 - [Data Quality](https://www.explainxkcd.com/wiki/index.php/2739:_Data_Quality) - xkcd's take on data compression
 - [Xerox scanners randomly alter numbers](https://www.dkriesel.com/en/blog/2013/0802_xerox-workcentres_are_switching_written_numbers_when_scanning) - when compression goes wrong
 - Any reddit discussion that mentions `AI`, `prediction` and `compression`
+- [Compressing the Library of Babel](https://novalis.org/talks/library-of-babel/#/) by David "Novalis" Turner
+- An actual implementation of Borges' [Library of Babel](https://libraryofbabel.info/)
+
+    > *"I know of a wild region whose librarians repudiate the vain superstitious custom of seeking any sense in books and compare it to looking for meaning in dreams or in the chaotic lines of one's hands . . . They admit that the inventors of writing imitated the twenty-five natural symbols, but they maintain that this application is accidental and that books in themselves mean nothing. This opinion - we shall see - is not altogether false."*
+    > 
+    > ― Jorge Luis Borges, The Library of Babel
+
+- [Kolmogorov's AI](https://www.devever.net/~hl/fi/kolmogorov), a short sci-fi story by Hugo Landau
 - A clip from Silicon Valley where Gilfoyle explains what will happen if [AI alignment goes wrong](https://www.youtube.com/watch?v=cWHTyeQg79A)
 
 [![Gilfoyle scares the s*** out of everyone!](https://img.youtube.com/vi/cWHTyeQg79A/0.jpg)](https://www.youtube.com/watch?v=cWHTyeQg79A)
