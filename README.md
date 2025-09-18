@@ -386,6 +386,9 @@ The CDF essentially partitions the unit interval $[0,1)$ into segments proportio
 - [Data Quality](https://www.explainxkcd.com/wiki/index.php/2739:_Data_Quality) - xkcd's take on data compression
 - [Xerox scanners randomly alter numbers](https://www.dkriesel.com/en/blog/2013/0802_xerox-workcentres_are_switching_written_numbers_when_scanning) - when compression goes wrong
 - Any reddit discussion that mentions `AI`, `prediction` and `compression`
+- A clip from Silicon Valley where Gilfoyle explains what will happen if [AI alignment goes wrong](https://www.youtube.com/watch?v=cWHTyeQg79A)
+
+[![Gilfoyle scares the s*** out of everyone!](https://img.youtube.com/vi/cWHTyeQg79A/0.jpg)](https://www.youtube.com/watch?v=cWHTyeQg79A)
 
 **The Ultimate Challenge**
 
