@@ -12,7 +12,7 @@ The core insight is that **compression and intelligence are deeply connected** -
 > 
 > ― Matt Mahoney, [Data Compression Explained](https://mattmahoney.net/dc/dce.html)
 
-> *"The history of science is the history of compression progress."
+> *"The history of science is the history of compression progress."*
 > 
 > ― Jürgen Schmidhuber on [Lex Fridman's podcast](https://youtu.be/3FIo6evmweo?t=1537)
 
@@ -20,25 +20,25 @@ The core insight is that **compression and intelligence are deeply connected** -
 
 ## Table of Contents 📚
 
-- [The Big Ideas 💡](#the-big-ideas-💡)
-- [Key Insights & Research Themes ☀️](#key-insights--research-themes-☀️)
+- [The Big Ideas 💡](#the-big-ideas-)
+- [Key Insights & Research Themes ☀️](#key-insights--research-themes-)
   - [Core Concepts](#core-concepts)
   - [Research Highlights](#research-highlights)
 - [Examples 🛠️](#examples-🛠️)
-  - [Gzip Text Classifier 🧪](#gzip-text-classifier-🧪)
-  - [LLM-Based Lossless Compression 🤖](#llm-based-lossless-compression-🤖)
+  - [Gzip Text Classifier 🧪](#gzip-text-classifier-)
+  - [LLM-Based Lossless Compression 🤖](#llm-based-lossless-compression-)
     - [The Core Algorithm](#the-core-algorithm)
     - [Mathematical Foundation](#mathematical-foundation)
     - [Technical Implementation](#technical-implementation)
-- [References 📖](#references-📖)
-  - [Articles 📑](#articles-📑)
+- [References 📖](#references-)
+  - [Articles 📑](#articles-)
   - [Books 📚](#books-📚)
-  - [Blogs/News ✍️](#blogsnews-️✍️)
-  - [Code & Tools 💻](#code--tools-💻)
-  - [Learn More 🚀](#learn-more-🚀)
-- [Fun Extras 🎨](#fun-extras-🎨)
-- [Contributing 🤝](#contributing-🤝)
-- [License 📜](#license-📜)
+  - [Blogs/News ✍️](#blogsnews-️)
+  - [Code & Tools 💻](#code--tools-)
+  - [Learn More 🚀](#learn-more-)
+- [Fun Extras 🎨](#fun-extras-)
+- [Contributing 🤝](#contributing-)
+- [License 📜](#license-)
 
 ## The Big Ideas 💡
 
