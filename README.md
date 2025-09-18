@@ -16,7 +16,7 @@ The core insight is that **compression and intelligence are deeply connected** -
 
 ## Table of Contents 📚
 
-- [The Big Idea 💡](#the-big-idea-💡)
+- [The Big Ideas 💡](#the-big-ideas-💡)
 - [Key Insights & Research Themes ☀️](#key-insights--research-themes-☀️)
   - [Core Concepts](#core-concepts)
   - [Research Highlights](#research-highlights)
@@ -36,13 +36,11 @@ The core insight is that **compression and intelligence are deeply connected** -
 - [Contributing 🤝](#contributing-🤝)
 - [License 📜](#license-📜)
 
-## The Big Idea 💡
+## The Big Ideas 💡
 
-**Compressors $\rightleftarrows$ Predictors:** compression, prediction and inference are intimately related. If you can compress data well, you must have a good model for it. Most data compression algorithms are really just models of our data with a coder head. The reverse also holds true: if we have a good model of our data, we can compress it (our brains do it all the time). This equivalence relation between compression and prediction means that we can pretty much convert any compressor into a predictor, and vice versa. As articulated in the [Hutter Prize challenge](http://prize.hutter1.net/hfaq.htm#compai) FAQ:
+**Compressors $\rightleftarrows$ Predictors:** compression and prediction are "two sides of the same coin". To compress data well, an algorithm must implicitly or explicitly build a model to anticipate which symbols are most likely to appear next. This intimate relationship is mathematically grounded in Shannon's source coding theorem, which establishes that the optimal code length for a symbol is inversely proportional to its probability (specifically, $-\log_2 P(\text{symbol})$). Therefore, a better predictive model - one that assigns higher probabilities to more likely symbols - yields better compression. As stated in the [Hutter Prize FAQ](http.prize.hutter1.net/hfaq.htm#compai): *"One can prove that the better you can compress, the better you can predict."* This equivalence means any compressor can function as a predictor, and any good predictor can be used to build a powerful compressor.
 
-> *"One can prove that the better you can compress, the better you can predict; and being able to predict [the environment] well is key for being able to act well."*
-
-**Understanding=Compression:** the obvious corollary is that in order to fully understand data, we must find its most *compact* representation. This connects ancient philosophical arguments with cutting-edge research in AI and data compression algorithms:
+**Understanding as Compression:** The link between prediction and compression deepens into a more profound idea: to truly understand something is to find its most compact representation. This notion, known as the Minimum Description Length (MDL) principle, connects ancient philosophical ideas with modern AI:
 
 - **[Aristotle's Posterior Analytics](https://www.logicmuseum.com/authors/aristotle/posterioranalytics/posterioranalytics.htm) (4th century BC):** a better explanation uses fewer assumptions
 
@@ -52,25 +50,21 @@ The core insight is that **compression and intelligence are deeply connected** -
 
 - **[Hutter's Universal Artificial Intelligence](https://hutter1.net/ai/) (2005):** the optimal agent compresses its experience into the shortest program that predicts future observations
 
-**LLMs as Compressors:** modern Large Language Models (LLMs) reveal a profound connection between language understanding and data compression. They demonstrate how intelligence naturally leads to efficient information encoding through two complementary approaches.
+**LLMs as Universal Compressors:** Large Language Models (LLMs) are a modern embodiment of this principle. Their ability to process and generate human language is a direct consequence of learning to compress vast amounts of text data. This process unfolds in two complementary ways:
 
-**Lossy Compression > Training:** during training, LLMs perform massive [*lossy* compression on Internet-scale text data](https://www.youtube.com/watch?v=zjkBMFhNj_g&t=257s). Trained on trillions of tokens, the model's billions of parameters become a compact representation of human knowledge and linguistic patterns.
+1.  **Training as Lossy Compression:** During training, an LLM distills trillions of tokens from the internet into a few billion parameters. This is a form of *lossy* compression, creating what Ted Chiang famously called a *"blurry JPEG"* of the Web - a compact, generalized model of human knowledge and linguistic patterns.
 
-<img src="ai2zip.png" title="Adapted from Andrej Karpathy"/>
+    <img src="ai2zip.png" title="Adapted from Andrej Karpathy"/>
 
-As Ted Chiang elegantly explains, this process creates a "blurry but useful" compression of human knowledge:
+2.  **Inference as Lossless Compression:** Once trained, the model can be inverted to perform *lossless* compression. By predicting the probability of the next token in a sequence, the LLM provides the precise information needed for an entropy-based coder to compress data to its theoretical limit. The more accurate the predictions, the better the compression.
 
-> *"**Think of ChatGPT as a blurry JPEG of all the text on the Web.** It retains much of the information on the Web, in the same way that a JPEG retains much of the information of a higher-resolution image, but, if you're looking for an exact sequence of bits, you won't find it; all you will ever get is an approximation. But, because the approximation is presented in the form of grammatical text, which ChatGPT excels at creating, it's usually acceptable."*
->
-> ― Ted Chiang, [ChatGPT is a blurry JPEG of the Web](https://www.newyorker.com/tech/annals-of-technology/chatgpt-is-a-blurry-jpeg-of-the-web)
+    ![LMCompress](images/lmcompress.png)
 
-**Lossless Compression > Prediction:** the trained model can then be used for *lossless* compression by leveraging its predictive capabilities. The LLM generates probability distributions over next tokens, which drives entropy-based algorithms like arithmetic coding to achieve optimal compression ratios (Li *et al.*, 2025):
+**Beyond Text:** Remarkably, this capability extends beyond language. LLMs trained on text can compress images, audio, and other data types more effectively than specialized algorithms, suggesting they learn universal patterns of information structure (Déletang *et al.*, 2023).
 
-![LMCompress](images/lmcompress.png)
+**Hallucinations as Compression Artifacts:** This framework also offers a compelling explanation for why LLMs *hallucinate*. Hallucinations can be seen as compression artifacts - predictable failures that occur when the model's lossy, compressed knowledge is insufficient to reconstruct information accurately. Just as a low-quality JPEG develops blocky artifacts, an LLM generates plausible but incorrect information when its internal representation is too blurry (Chlon, Karim & Chlon, 2025).
 
-**Universal Compression:** remarkably, LLMs trained primarily on text data can actually function as *general-purpose* lossless compressors. Recent research shows they can outperform traditional algorithms even on non-textual data like images and audio, suggesting that language modeling captures fundamental patterns of information structure (Déletang *et al.*, 2023).
-
-**The AGI Connection:** If intelligence emerges from finding minimal descriptions of our observations, then the path to AGI runs directly through compression. Better compression algorithms don't just save storage - they represent deeper understanding of the world.
+**The AGI Connection:** If intelligence is fundamentally about finding minimal, elegant descriptions of the world, then the path to Artificial General Intelligence (AGI) may run directly through the field of data compression. Developing better compression algorithms is not just about saving space; it is a direct pursuit of deeper understanding.
 
 ## Key Insights & Research Themes 💡
 
@@ -258,6 +252,7 @@ The CDF essentially partitions the unit interval $[0,1)$ into segments proportio
 - (Buttrick, 2024) [Studying large language models as compression algorithms for human culture](https://www.cell.com/trends/cognitive-sciences/abstract/S1364-6613(24)00001-9)
 - (Chen *et al.*, 2024a) [Information Compression in the AI Era: Recent Advances and Future Challenges](https://arxiv.org/abs/2406.10036)
 - (Chen *et al.*, 2024b) [Large Language Models for Lossless Image Compression: Next-Pixel Prediction in Language Space is All You Need](https://arxiv.org/abs/2411.12448)
+- (Chlon, Karim & Chlon, 2025) [Predictable Compression Failures: Why Language Models Actually Hallucinate](https://arxiv.org/abs/2509.11208)
 - (David, Moran & Yehudayoff, 2016) [On statistical learning via the lens of compression](https://arxiv.org/abs/1610.03592)
 - (Delétang *et al.*, 2023) [Language Modeling is Compression](https://arxiv.org/abs/2309.10668)
 - (Dubois *et al.*, 2021) [Lossy Compression for Lossless Prediction](https://arxiv.org/abs/2106.10800)
@@ -316,6 +311,7 @@ The CDF essentially partitions the unit interval $[0,1)$ into segments proportio
 - (Bactra, 2023) ["Attention", "Transformers", in Neural Network "Large Language Models"](http://bactra.org/notebooks/nn-attention-and-transformers.html)
 - (Confessions of a Code Addict, 2023) [How Language Models Beat PNG and FLAC Compression & What It Means](https://blog.codingconfessions.com/p/language-modeling-is-compression)
 - (Hackaday, 2023) [Text compression gets weirdly efficient with LLMs](https://hackaday.com/2023/08/27/text-compression-gets-weirdly-efficient-with-llms/)
+- (Hassana Labs, 2025) [LLM hallucinations are compression failures, and we can detect them](https://substack.com/inbox/post/173644387)
 - (Hendrick Erz, 2023) [Why gzip just beat a Large Language Model](https://www.hendrik-erz.de/post/why-gzip-just-beat-a-large-language-model)
 - (IEEE, 2023) [Intelligence via Compression of Information](https://www.computer.org/publications/tech-news/community-voices/intelligence-via-compression-of-information)
 - (Jakobs.dev, 2023) [78% MNIST accuracy using GZIP in under 10 lines of code](https://jakobs.dev/solving-mnist-with-gzip/)
