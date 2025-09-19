@@ -46,6 +46,8 @@ The core insight is that **compression and intelligence are deeply connected** -
 
 **Understanding as Compression:** The link between prediction and compression deepens into a more profound idea: to truly understand something is to find its most compact representation. This notion, known as the Minimum Description Length (MDL) principle, connects ancient philosophical ideas with modern AI:
 
+<img src="notes/mdl_fried_egg.png" title="Source: Adapted from Jack Rae / Stanford MLSys"/>
+
 - **[Aristotle's Posterior Analytics](https://www.logicmuseum.com/authors/aristotle/posterioranalytics/posterioranalytics.htm) (4th century BC):** a better explanation uses fewer assumptions
 
 - **[Occam's Razor](https://math.ucr.edu/home/baez/physics/General/occam.html) (14th century):** the simplest, most elegant explanation is usually the correct one
@@ -58,11 +60,11 @@ The core insight is that **compression and intelligence are deeply connected** -
 
 1.  **Training as Lossy Compression:** During training, an LLM distills trillions of tokens from the internet into a few billion parameters. This is a form of *lossy* compression, creating what Ted Chiang famously called a *"blurry JPEG"* of the Web - a compact, generalized model of human knowledge and linguistic patterns.
 
-    <img src="ai2zip.png" title="Adapted from Andrej Karpathy"/>
+    <img src="images/pretraining_compression.png" title="Source: Adapted from Andrej Karpathy"/>
 
 2.  **Inference as Lossless Compression:** Once trained, the model can be inverted to perform *lossless* compression. By predicting the probability of the next token in a sequence, the LLM provides the precise information needed for an entropy-based coder to compress data to its theoretical limit. The more accurate the predictions, the better the compression.
 
-    ![LMCompress](images/lmcompress.png)
+    <img src="images/lmcompress.png" title="Source: Li et al. (2025)"/>
 
 **Beyond Text:** Remarkably, this capability extends beyond language. LLMs trained on text can compress images, audio, and other data types more effectively than specialized algorithms, suggesting they learn universal patterns of information structure (Déletang *et al.*, 2023).
 
@@ -358,7 +360,7 @@ The CDF essentially partitions the unit interval $[0,1)$ into segments proportio
 **Other Stuff**
 
 - [`microsoft/LLMLingua`](https://github.com/microsoft/LLMLingua) - uses a compact, well-trained language model to identify and remove non-essential tokens in prompts
-- [`vllm-project/llm-compressor`] - Transformers-compatible library for applying various compression algorithms to LLMs for optimized deployment with vLLM
+- [`vllm-project/llm-compressor`](https://github.com/vllm-project/llm-compressor) - Transformers-compatible library for applying various compression algorithms to LLMs for optimized deployment with vLLM
 
 **Other Tools**
 
