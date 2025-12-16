@@ -282,6 +282,7 @@ The CDF essentially partitions the unit interval $[0,1)$ into segments proportio
 - (Lester *et al.*, 2024) [Training LLMs over Neurally Compressed Text](https://arxiv.org/abs/2404.03626v1)
 - (Li *et al.*, 2025) [Lossless data compression by large models](https://www.nature.com/articles/s42256-025-01033-7)
   - **Preprint:** [Understanding is Compression](https://arxiv.org/abs/2407.07723)
+- (Ma, Tsao & Shum, 2022) [On the Principles of Parsimony and Self-Consistency for the Emergence of Intelligence](https://arxiv.org/abs/2207.04630)
 - (Maguire *et al.*, 2015) [Compressionism: A Theory of Mind Based on Data Compression](https://norma.ncirl.ie/2114/)
 - (Mahoney, 1999) [Text Compression as a Test for Artificial Intelligence](https://gwern.net/doc/cs/algorithm/information/compression/1999-mahoney.pdf)
 - (Mao, Pirk & Xue, 2025) [Lossless Compression of Large Language Model-Generated Text via Next-Token Prediction](https://arxiv.org/abs/2505.06297v1)
@@ -306,6 +307,7 @@ The CDF essentially partitions the unit interval $[0,1)$ into segments proportio
 
 ### Books 📚
 
+- (Buchanan *et al.*, 2025) [Learning Deep Representations of Data Distributions](https://ma-lab-berkeley.github.io/deep-representation-learning-book/)
 - (Grünwald, 2007) [The Minimum Description Length](https://homepages.cwi.nl/~pdg/book/book.html)
 - (Hutter, 2005) [Universal Artificial Intelligence: Sequential Decisions Based on Algorithmic Probability](https://hutter1.net/ai/uaibook.htm)
 - (Li & Vitanyi, 2008) [An Introduction to Kolmogorov Complexity and Its Applications](https://link.springer.com/book/10.1007/978-3-030-11298-1)
@@ -372,6 +374,7 @@ The CDF essentially partitions the unit interval $[0,1)$ into segments proportio
 - [Intro to Large Language Models](https://www.youtube.com/watch?v=zjkBMFhNj_g) by Andrej Karpathy
 - [Compression for AGI](https://www.youtube.com/watch?v=dO4TPJkeaaU) by Jack Rae at Stanford MLSys
 - [Prediction as Compression](https://www.youtube.com/watch?v=wSQo2xUiSf0) by Jeffrey Vitter
+- [The Mathematical Foundations of Intelligence](https://www.youtube.com/watch?v=QWidx8cYVRs) with Yi Ma
 
 **Thought-Provoking Reads**
 
