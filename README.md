@@ -372,6 +372,7 @@ The CDF essentially partitions the unit interval $[0,1)$ into segments proportio
 
 **Must-Watch Videos**
 
+- [Reinventing Entropy | Compression is Intelligence / Part 1](https://www.youtube.com/watch?v=l6DKRf-fAAM) by 3blue1brown
 - [An Observation on Generalization](https://www.youtube.com/live/AKMuA_TVz3A) by Ilya Sutskever (because OpenAI wouldn't let him talk about something else)
 - [Intro to Large Language Models](https://www.youtube.com/watch?v=zjkBMFhNj_g) by Andrej Karpathy
 - [Compression for AGI](https://www.youtube.com/watch?v=dO4TPJkeaaU) by Jack Rae at Stanford MLSys
